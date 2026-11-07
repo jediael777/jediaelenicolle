@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento Jediael & Nicolle</title>
+    
+    <meta name="description" content="Sua presença é o nosso maior presente. Venha celebrar conosco este momento inesquecível!">
+    <meta property="og:title" content="Casamento Jediael & Nicolle">
+    <meta property="og:description" content="Você é nosso convidado especial! 06 de fevereiro de 2027 • Montes Claros - MG.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/wVBTivV.jpg"> 
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgCream: '#FAF7F2', 
+                        olive: '#2C3A30',   
+                        gold: '#D4AF37',
+                        goldLight: '#E8CE8A'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(44, 58, 48, 0.05)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.1)',
+                        'hover': '0 25px 50px -12px rgba(212, 175, 55, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { background-color: #FAF7F2; color: #2C3A30; }
+        
+        .glass-header { 
+            background-color: rgba(250, 247, 242, 0.85); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15); 
+        }
+        
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 2rem; 
+        }
+
+        input[type="radio"] { accent-color: #D4AF37; width: 1.2rem; height: 1.2rem; cursor: pointer; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF7F2; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b8972e; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <span class="font-serif text-3xl font-semibold tracking-wider text-olive group-hover:scale-105 transition-transform">J<span class="text-gold italic">&</span>N</span>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#historia" class="text-xs uppercase tracking-[0.2em] text-olive/80 hover:text-gold transition-colors duration-300 font-medium">Nós</a>
+                    <a href="#evento" class="text-xs uppercase tracking-[0.2em] text-olive/80 hover:text-gold transition-colors duration-300 font-medium">O Evento</a>
+                    <a href="#confirmacao" class="text-xs uppercase tracking-[0.2em] text-olive/80 hover:text-gold transition-colors duration-300 font-medium">Presença</a>
+                    <a href="#gesto-carinho" class="text-xs uppercase tracking-[0.2em] text-olive/80 hover:text-gold transition-colors duration-300 font-medium">Carinho</a>
+                    <a href="#presentes" class="text-xs uppercase tracking-[0.2em] text-olive/80 hover:text-gold transition-colors duration-300 font-medium">Presentes</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-olive hover:text-gold focus:outline-none text-2xl transition-colors">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-bgCream/95 backdrop-blur-2xl border-t border-gold/10 shadow-glass absolute w-full">
+            <div class="px-4 py-8 space-y-6 flex flex-col text-center">
+                <a href="#historia" class="block text-sm uppercase tracking-widest text-olive/90 hover:text-gold font-medium">Nós</a>
+                <a href="#evento" class="block text-sm uppercase tracking-widest text-olive/90 hover:text-gold font-medium">O Evento</a>
+                <a href="#confirmacao" class="block text-sm uppercase tracking-widest text-olive/90 hover:text-gold font-medium">Presença</a>
+                <a href="#gesto-carinho" class="block text-sm uppercase tracking-widest text-olive/90 hover:text-gold font-medium">Carinho</a>
+                <a href="#presentes" class="block text-sm uppercase tracking-widest text-olive/90 hover:text-gold font-medium">Presentes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Background position ajustado para não cortar o rosto) -->
+    <section id="home" class="relative min-h-[100svh] flex items-center justify-center pt-20 overflow-hidden bg-[url('https://i.imgur.com/wVBTivV.jpg')] bg-cover bg-fixed" style="background-position: center 15%;">
+        <div class="absolute inset-0 bg-olive/30 backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bgCream"></div>
+        
+        <div class="relative z-10 text-center px-6 py-14 md:py-20 max-w-4xl mx-auto glass-card shadow-glass m-4 w-[90%] md:w-full">
+            <h1 class="reveal font-serif text-6xl md:text-8xl lg:text-9xl text-white font-medium mb-4 leading-tight drop-shadow-lg">
+                Jediael <br class="md:hidden"> <span class="text-gold italic font-light">&</span> Nicolle
+            </h1>
+            
+            <p class="reveal delay-100 font-sans text-xs md:text-sm tracking-[0.4em] uppercase text-white/90 mb-14 font-medium drop-shadow-md">
+                06.02.2027 <span class="mx-3 text-gold">|</span> Montes Claros - MG
+            </p>
+
+            <div class="reveal delay-200 flex justify-center gap-4 md:gap-12 max-w-3xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <span id="days" class="font-serif text-4xl md:text-6xl text-white mb-2 drop-shadow-md">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-white/80 font-medium">Dias</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="hours" class="font-serif text-4xl md:text-6xl text-white mb-2 drop-shadow-md">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-white/80 font-medium">Horas</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="minutes" class="font-serif text-4xl md:text-6xl text-white mb-2 drop-shadow-md">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-white/80 font-medium">Minutos</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="seconds" class="font-serif text-4xl md:text-6xl text-gold mb-2 drop-shadow-md">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-white/80 font-medium">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPOSIÇÃO EDITORIAL 1 (O Início) -->
+    <section id="historia" class="py-24 bg-bgCream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative reveal">
+                    <img src="https://i.imgur.com/ZsI2NOr.jpg" class="w-4/5 rounded-[3rem] shadow-xl relative z-10 object-cover h-[500px]" alt="Foto Jediael e Nicolle">
+                    <img src="https://i.imgur.com/nDu3oLw.jpg" class="w-1/2 absolute -bottom-10 -right-4 rounded-3xl shadow-2xl border-8 border-bgCream z-20 object-cover h-64" alt="Foto Jediael e Nicolle">
+                    <div class="absolute top-10 -left-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl"></div>
+                </div>
+                <div class="w-full lg:w-1/2 reveal delay-100 text-center lg:text-left mt-10 lg:mt-0">
+                    <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-4 block">Nossa História</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-olive mb-8 leading-tight">Um novo capítulo<br>ao seu lado.</h2>
+                    <p class="font-sans text-olive/70 leading-relaxed text-lg mb-10 max-w-lg mx-auto lg:mx-0">
+                        Cada momento que vivemos nos trouxe até aqui. O que começou de forma simples se transformou na nossa maior certeza. Estamos muito felizes em compartilhar a alegria do nosso casamento com as pessoas que mais amamos.
+                    </p>
+                    <img src="https://i.imgur.com/0y3M5XR.jpg" class="w-full h-56 object-cover rounded-3xl shadow-soft" alt="Foto Jediael e Nicolle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O EVENTO (Integrado com foto lateral) -->
+    <section id="evento" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-16">
+            
+            <div class="w-full lg:w-1/2 reveal bg-bgCream/50 rounded-[3rem] p-10 md:p-14 shadow-soft border border-olive/5 text-center group hover:shadow-hover transition-all duration-500">
+                <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                    <i class="fa-solid fa-champagne-glasses text-3xl text-gold"></i>
+                </div>
+                
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-2 block">Celebração</span>
+                <h3 class="font-serif text-4xl md:text-5xl text-olive mb-4">A Cerimônia</h3>
+                <div class="h-px w-20 bg-gold/50 mx-auto mb-10"></div>
+                
+                <div class="space-y-6 text-left max-w-xs mx-auto">
+                    <div class="flex items-center text-olive/80">
+                        <i class="fa-regular fa-calendar text-gold text-2xl w-10"></i>
+                        <div>
+                            <p class="font-sans font-semibold text-olive">Quando</p>
+                            <p class="font-sans text-sm mt-1">Sábado, 06 de fev. de 2027<br>às 15h00</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-olive/80">
+                        <i class="fa-solid fa-location-dot text-gold text-2xl w-10"></i>
+                        <div>
+                            <p class="font-sans font-semibold text-olive">Onde</p>
+                            <p class="font-sans text-sm mt-1">Espaço Golden Sul<br>Montes Claros, MG</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4 mt-12">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Espaço+Golden+Sul+Montes+Claros+MG" target="_blank" 
+                       class="inline-flex items-center justify-center px-8 py-4 bg-olive text-white rounded-full font-sans text-xs uppercase tracking-[0.15em] font-semibold hover:bg-olive/90 active:scale-95 transition-all shadow-md">
+                        <i class="fa-solid fa-map-location-dot mr-3 text-goldLight"></i> Ver Localização
+                    </a>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Jediael+%26+Nicolle&dates=20270206T180000Z/20270207T020000Z" target="_blank" 
+                       class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-olive/20 text-olive rounded-full font-sans text-xs uppercase tracking-[0.15em] font-semibold hover:border-gold hover:text-gold active:scale-95 transition-all">
+                        <i class="fa-regular fa-calendar-plus mr-3"></i> Salvar na Agenda
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 reveal delay-100 h-full">
+                <img src="https://i.imgur.com/7HdhoS5.jpg" class="w-full h-[700px] object-cover rounded-[3rem] shadow-lg" alt="Foto Jediael e Nicolle">
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR PARALLAX -->
+    <section class="h-[50vh] min-h-[400px] bg-[url('https://i.imgur.com/TTtPdQb.jpg')] bg-cover bg-center bg-fixed relative flex items-center justify-center">
+        <div class="absolute inset-0 bg-olive/40 backdrop-blur-[1px]"></div>
+        <div class="relative z-10 text-center px-4 reveal">
+            <i class="fa-solid fa-quote-left text-3xl text-gold/80 mb-6"></i>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-medium italic tracking-wide drop-shadow-md">
+                "Para sempre não é tempo suficiente."
+            </h2>
+        </div>
+    </section>
+
+    <!-- CONFIRMAÇÃO DE PRESENÇA -->
+    <section id="confirmacao" class="py-32 bg-bgCream">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Fotos decorativas RSVP -->
+            <div class="w-full lg:w-5/12 grid grid-cols-2 gap-4 reveal">
+                <img src="https://i.imgur.com/Wr7FTFR.jpg" class="w-full h-80 object-cover rounded-[2.5rem] col-span-2 shadow-soft hover:shadow-hover transition-shadow" alt="Foto">
+                <img src="https://i.imgur.com/eNTXqTo.jpg" class="w-full h-56 object-cover rounded-[2rem] shadow-soft hover:shadow-hover transition-shadow" alt="Foto">
+                <img src="https://i.imgur.com/boc7xfu.jpg" class="w-full h-56 object-cover rounded-[2rem] shadow-soft hover:shadow-hover transition-shadow" alt="Foto">
+            </div>
+
+            <!-- Formulário -->
+            <div class="w-full lg:w-7/12 reveal delay-100">
+                <div class="mb-10 text-center lg:text-left">
+                    <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-2 block">RSVP</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-olive mb-6">Sua Presença</h2>
+                    <p class="font-sans text-olive/70 leading-relaxed text-lg max-w-lg">
+                        O convite é individual. Por favor, confirme sua presença até <span class="font-semibold text-olive">15 de dezembro de 2026</span>.
+                    </p>
+                </div>
+
+                <form id="presenceForm" class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-soft border border-olive/5">
+                    <div class="mb-8">
+                        <label for="nome" class="block font-sans text-xs uppercase tracking-[0.15em] text-olive mb-3 font-semibold">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required 
+                               class="w-full bg-bgCream/50 border border-olive/10 focus:border-gold focus:ring-2 focus:ring-gold/20 rounded-2xl px-5 py-4 font-sans text-olive outline-none transition-all shadow-inner">
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block font-sans text-xs uppercase tracking-[0.15em] text-olive mb-4 font-semibold">Você poderá comparecer?</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer p-5 bg-bgCream/30 border border-olive/10 rounded-2xl hover:border-gold/50 transition-all group">
+                                <input type="radio" name="presenca" value="sim" required class="mr-4">
+                                <span class="font-sans text-olive font-medium group-hover:text-gold transition-colors">Sim, estarei presente!</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer p-5 bg-bgCream/30 border border-olive/10 rounded-2xl hover:border-olive/30 transition-all group">
+                                <input type="radio" name="presenca" value="nao" class="mr-4">
+                                <span class="font-sans text-olive/70 font-medium group-hover:text-olive transition-colors">Infelizmente, não poderei comparecer.</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-10">
+                        <label for="recado" class="block font-sans text-xs uppercase tracking-[0.15em] text-olive mb-3 font-semibold">Mensagem (Opcional)</label>
+                        <textarea id="recado" name="recado" rows="3" 
+                                  class="w-full bg-bgCream/50 border border-olive/10 focus:border-gold focus:ring-2 focus:ring-gold/20 rounded-2xl px-5 py-4 font-sans text-olive outline-none transition-all resize-none shadow-inner"></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full py-5 bg-olive text-white rounded-2xl font-sans text-xs uppercase tracking-[0.2em] hover:bg-gold active:scale-[0.98] transition-all shadow-md flex justify-center items-center font-bold">
+                        <span>Confirmar Presença</span><i class="fa-brands fa-whatsapp ml-3 text-lg text-goldLight"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- GESTO DE CARINHO (PIX E WHATSAPP) -->
+    <section id="gesto-carinho" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+            
+            <div class="w-full lg:w-1/2 reveal text-center lg:text-left">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-2 block">Mimos</span>
+                <h2 class="font-serif text-5xl md:text-6xl text-olive mb-6">Gesto de Carinho</h2>
+                <div class="h-px w-20 bg-gold/50 mx-auto lg:mx-0 mb-8"></div>
+                <p class="font-sans text-olive/70 leading-relaxed text-lg mb-12 max-w-lg mx-auto lg:mx-0">
+                    Sua presença é o maior presente. Caso deseje nos abençoar com um valor livre para o início da nossa jornada a dois, disponibilizamos nossa chave PIX.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                    <!-- Card PIX -->
+                    <div class="bg-bgCream rounded-[2rem] p-8 border border-olive/5 shadow-soft text-center group hover:shadow-hover hover:-translate-y-1 transition-all duration-500 w-full sm:w-1/2">
+                        <i class="fa-brands fa-pix text-3xl text-gold mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-serif text-2xl text-olive mb-2">Chave E-mail</h3>
+                        <p class="font-sans text-[10px] uppercase tracking-widest text-olive/50 mb-4 font-semibold">nicolleborella@gmail.com</p>
+                        
+                        <button id="btnCopyPix" class="w-full py-3 bg-white border border-olive/20 text-olive hover:border-gold hover:text-gold active:scale-95 rounded-xl font-sans text-[10px] uppercase tracking-[0.1em] transition-all font-bold shadow-sm">
+                            <i class="fa-regular fa-copy mr-2"></i> <span id="pixText">Copiar Chave</span>
+                        </button>
+                    </div>
+
+                    <!-- Card Whatsapp Dúvidas -->
+                    <div class="bg-olive rounded-[2rem] p-8 shadow-soft text-center group hover:shadow-hover hover:-translate-y-1 transition-all duration-500 w-full sm:w-1/2 relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at center, #D4AF37 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        <i class="fa-solid fa-gift text-3xl text-gold mb-4 relative z-10 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-serif text-2xl text-bgCream mb-2 relative z-10">Outras Formas</h3>
+                        <p class="font-sans text-[10px] uppercase tracking-widest text-white/50 mb-4 font-semibold relative z-10">Fale Conosco</p>
+                        
+                        <button onclick="openGeneralChat()" class="w-full py-3 bg-gold text-white rounded-xl font-sans text-[10px] uppercase tracking-[0.1em] hover:bg-goldLight active:scale-95 transition-all relative z-10 font-bold shadow-md">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Dúvidas
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 reveal delay-100">
+                <img src="https://i.imgur.com/Wpd6X60.jpg" class="w-full h-[600px] object-cover rounded-[3rem] shadow-xl" alt="Foto Jediael e Nicolle">
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTES (LISTA DO LAR) -->
+    <section id="presentes" class="py-32 bg-bgCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-24">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-2 block">Nosso Lar</span>
+                <h2 class="font-serif text-5xl md:text-6xl text-olive mb-6">Lista de Presentes</h2>
+                <div class="h-px w-20 bg-gold/50 mx-auto mb-8"></div>
+                <p class="font-sans text-olive/70 max-w-2xl mx-auto leading-relaxed text-lg">
+                    Preparamos uma lista com itens que nos ajudarão a montar o nosso novo lar. Escolha a categoria e clique em "Presentear"!
+                </p>
+            </div>
+
+            <!-- Categoria: Móveis -->
+            <div class="reveal delay-100 mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h3 class="font-serif text-3xl text-olive">Móveis</h3>
+                    <div class="h-[1px] flex-grow bg-olive/10"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=600&auto=format&fit=crop" alt="Sofá Retrátil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Sofá Retrátil</h4>
+                            <button onclick="presentearItem('Sofá Retrátil')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=600&auto=format&fit=crop" alt="Cama Box Casal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Cama Box Casal</h4>
+                            <button onclick="presentearItem('Cama Box Casal')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1617806118233-18e1c0945592?q=80&w=600&auto=format&fit=crop" alt="Mesa de Jantar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Mesa de Jantar</h4>
+                            <button onclick="presentearItem('Mesa de Jantar')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=600&auto=format&fit=crop" alt="Guarda-roupas Casal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Guarda-roupas Casal</h4>
+                            <button onclick="presentearItem('Guarda-roupas Casal')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Eletrodomésticos -->
+            <div class="reveal delay-100 mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h3 class="font-serif text-3xl text-olive">Eletrodomésticos</h3>
+                    <div class="h-[1px] flex-grow bg-olive/10"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=600&auto=format&fit=crop" alt="Geladeira Frost Free" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Geladeira Frost Free</h4>
+                            <button onclick="presentearItem('Geladeira Frost Free')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=600&auto=format&fit=crop" alt="Máquina de Lavar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Máquina de Lavar</h4>
+                            <button onclick="presentearItem('Máquina de Lavar')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=600&auto=format&fit=crop" alt="Fogão 4 Bocas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Fogão 4 Bocas</h4>
+                            <button onclick="presentearItem('Fogão 4 Bocas')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1585659722983-3a6750ab62f3?q=80&w=600&auto=format&fit=crop" alt="Micro-ondas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Micro-ondas</h4>
+                            <button onclick="presentearItem('Micro-ondas')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Utensílios -->
+            <div class="reveal delay-100">
+                <div class="flex items-center gap-4 mb-8">
+                    <h3 class="font-serif text-3xl text-olive">Utensílios & Decoração</h3>
+                    <div class="h-[1px] flex-grow bg-olive/10"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1584990347449-a6a9643d607e?q=80&w=600&auto=format&fit=crop" alt="Jogo de Panelas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Jogo de Panelas</h4>
+                            <button onclick="presentearItem('Jogo de Panelas')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611689342806-0863700ce6e4?q=80&w=600&auto=format&fit=crop" alt="Aparelho de Jantar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Aparelho de Jantar</h4>
+                            <button onclick="presentearItem('Aparelho de Jantar')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1538592116845-119a3973c958?q=80&w=600&auto=format&fit=crop" alt="Jogo de Copos e Taças" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Taças e Copos</h4>
+                            <button onclick="presentearItem('Jogo de Copos e Taças')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-hover border border-olive/5 flex flex-col h-full group transition-all duration-500 hover:-translate-y-1">
+                        <div class="h-48 w-full rounded-2xl bg-bgCream mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?q=80&w=600&auto=format&fit=crop" alt="Kit Utensílios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div class="px-2 flex flex-col flex-grow text-center">
+                            <h4 class="font-serif text-xl text-olive mb-2">Kit Utensílios</h4>
+                            <button onclick="presentearItem('Kit Utensílios de Cozinha')" class="mt-auto w-full py-3 bg-white border border-olive/20 text-olive rounded-xl font-sans text-[10px] uppercase tracking-widest hover:border-gold hover:text-gold active:scale-95 transition-all font-bold">Presentear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPOSIÇÃO DE ENCERRAMENTO (Mosaico elegante) -->
+    <section class="py-20 bg-white border-t border-olive/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal text-center">
+            <h2 class="font-serif text-4xl text-olive mb-12">Contagem regressiva para o Sim</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://i.imgur.com/tRt6yjr.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-sm hover:-translate-y-1 transition-transform" alt="Foto Jediael e Nicolle">
+                <img src="https://i.imgur.com/g1eTLkI.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-sm md:-translate-y-6 hover:-translate-y-8 transition-transform" alt="Foto Jediael e Nicolle">
+                <img src="https://i.imgur.com/VKXzhzo.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-sm hover:-translate-y-1 transition-transform" alt="Foto Jediael e Nicolle">
+                <img src="https://i.imgur.com/Nzwny1D.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl shadow-sm md:-translate-y-6 hover:-translate-y-8 transition-transform" alt="Foto Jediael e Nicolle">
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="py-16 bg-olive text-bgCream text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at center, #D4AF37 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center relative z-10">
+            <span class="font-serif text-4xl mb-6">Jediael <span class="text-gold italic">&</span> Nicolle</span>
+            <div class="h-[1px] w-16 bg-gold/50 mb-6"></div>
+            <p class="font-sans text-xs tracking-[0.3em] uppercase text-bgCream/60">Com carinho, até 06.02.2027</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animação Reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            reveals.forEach((el) => observer.observe(el));
+        });
+
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = menu.querySelectorAll('a');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if(menu.classList.contains('hidden')){
+                icon.className = 'fa-solid fa-bars-staggered';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('i').className = 'fa-solid fa-bars-staggered';
+            });
+        });
+
+        // Contador
+        const targetDate = new Date('2027-02-06T15:00:00-03:00').getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                document.getElementById('days').innerText = "00"; document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00"; document.getElementById('seconds').innerText = "00";
+                return;
+            }
+            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000); updateTimer();
+
+        // Pix Copy
+        const btnCopyPix = document.getElementById('btnCopyPix');
+        btnCopyPix.addEventListener('click', () => {
+            navigator.clipboard.writeText('nicolleborella@gmail.com').then(() => {
+                const textSpan = document.getElementById('pixText');
+                const icon = btnCopyPix.querySelector('i');
+                const originalText = textSpan.innerText;
+                
+                textSpan.innerText = "Copiada!";
+                icon.className = 'fa-solid fa-check mr-2';
+                btnCopyPix.classList.add('border-gold', 'text-gold');
+                
+                setTimeout(() => {
+                    textSpan.innerText = originalText;
+                    icon.className = 'fa-regular fa-copy mr-2';
+                    btnCopyPix.classList.remove('border-gold', 'text-gold');
+                }, 3000);
+            });
+        });
+
+        // WhatsApp Functions
+        function openGeneralChat() {
+            const msg = "Olá, Jediael e Nicolle! Gostaria de conversar com vocês sobre o casamento e os mimos para a casa nova. ✨";
+            window.open(`https://wa.me/5538992240390?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function presentearItem(itemNome) {
+            const msg = `Olá, Jediael e Nicolle! ✨ \n\nOlhei a lista de presentes de vocês e gostaria de presenteá-los com: *${itemNome}*! \n\nComo faço para contribuir ou realizar a entrega?`;
+            window.open(`https://wa.me/5538992240390?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Form Submit
+        const form = document.getElementById('presenceForm');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwAu-SGrI00jejjcOT3SAWDICOQlva6m2zGvnwd_t7C81qFWXFNqHaAFZoHDLeenKhykA/exec';
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const presenca = document.querySelector('input[name="presenca"]:checked').value;
+            const recado = document.getElementById('recado').value.trim() || "Nenhuma observação.";
+            const btnSubmit = form.querySelector('button[type="submit"]');
+            const originalBtnHtml = btnSubmit.innerHTML;
+            
+            btnSubmit.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-lg"></i>';
+            btnSubmit.disabled = true;
+
+            fetch(scriptURL, {
+                method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ nome, presenca, recado })
+            }).then(() => {
+                abrirWhatsApp(nome, presenca, recado); resetarBotao(btnSubmit, originalBtnHtml);
+            }).catch(() => {
+                abrirWhatsApp(nome, presenca, recado); resetarBotao(btnSubmit, originalBtnHtml);
+            });
+        });
+
+        function abrirWhatsApp(nome, presenca, recado) {
+            let msgWhatsApp = presenca === "sim" 
+                ? `Olá, Jediael e Nicolle! ✨\n\nEstou passando para confirmar a minha presença no casamento de vocês!\n\n👤 *Nome:* ${nome}\n💌 *Recado:* ${recado}\n\nEstou ansioso(a) para celebrar esse dia tão especial com vocês!`
+                : `Olá, Jediael e Nicolle! ✨\n\nInfelizmente, não poderei comparecer ao casamento de vocês. Agradeço de coração pelo convite e desejo toda a felicidade do mundo nessa nova etapa!\n\n👤 *Nome:* ${nome}\n💌 *Recado:* ${recado}`;
+            window.open(`https://wa.me/5538992240390?text=${encodeURIComponent(msgWhatsApp)}`, '_blank');
+        }
+
+        function resetarBotao(btn, textoOriginal) {
+            btn.innerHTML = '<i class="fa-solid fa-check text-lg"></i>';
+            setTimeout(() => { form.reset(); btn.innerHTML = textoOriginal; btn.disabled = false; }, 2000);
+        }
+    </script>
+</body>
+</html>
